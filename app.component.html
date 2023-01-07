@@ -1,0 +1,23 @@
+<h1> {{title}} </h1>
+
+<table *ngFor="let user of data" >
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+</table>
+
+<p>The hero's birthday is {{ today | date: 'dd/MM/YYYY' }}</p>
+{{a | currency:'INR'}}
+
+<form #usersFroms="ngForm"> 
+  <br><br> <input type="text" [(ngModel)]="name" name="name" placeholder="Enter name"> <br><br>
+  <input type="text" name="email" [(ngModel)]="email" placeholder="Enter email"> <br> <br>
+  <button type="submit" (click)="getUserFromData(usersFroms)">Add New User</button>
+</form>
